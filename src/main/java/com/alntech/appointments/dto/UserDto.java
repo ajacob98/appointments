@@ -1,9 +1,9 @@
-package com.alntech.appointments.controller.UserController.RequestBodies;
+package com.alntech.appointments.dto;
 
 import lombok.Data;
 
 @Data
-public class UserSignup {
+public class UserDto {
     private String name;
     private String password;
     private String email;

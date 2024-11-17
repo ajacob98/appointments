@@ -6,8 +6,13 @@ spring:
     username: test_appointments
     password: password
     driver-class-name: org.postgresql.Driver
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
-    database: postgresql
-    show-sql: true
+#  jpa:
+#    hibernate:
+#      ddl-auto: verify
+#    database: postgresql
+#    show-sql: true
+logging:
+  level:
+    root: INFO
+    org.springframework.jdbc.core: DEBUG
+    com.alntech.appointments.controllers.ExpertController: DEBUG

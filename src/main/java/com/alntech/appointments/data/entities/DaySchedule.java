@@ -1,32 +1,30 @@
 package com.alntech.appointments.data.entities;
 
 
-import com.alntech.appointments.data.entities.enums.Day;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Table(name ="day_schedules")
 public class DaySchedule {
     @Id
-    private String id;
+    private long id;
 
-    @Enumerated(EnumType.STRING)
-    private Day day;
+    private String day;
 
-    private LocalDateTime startTime;
+    private LocalTime startTime;
 
     private int durationMinutes;
 
-    @ManyToOne
-    private Expert expert;
+    private long expertId;
 
 }
